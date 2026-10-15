@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: myedudrive
+resources:
+  - ../../base
+images:
+  # Docker Hub account confirmed from the user's screenshot.
+  - name: nextcloud
+    newName: docker.io/alan0o0s/myedudrive-server
+    newTag: v1.1.2

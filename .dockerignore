@@ -1,0 +1,7 @@
+# Keep local credentials out of Docker build contexts.
+secrets.env
+**/secrets.env
+
+# Git metadata is never needed in these images.
+.git
+**/.git

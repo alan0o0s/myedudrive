@@ -84,7 +84,10 @@ spec:
                   name: myedudrive-secrets
                   key: NEXTCLOUD_ADMIN_PASSWORD
             - name: NEXTCLOUD_TRUSTED_DOMAINS
-              value: "localhost 127.0.0.1"
+              valueFrom:
+                secretKeyRef:
+                  name: myedudrive-secrets
+                  key: NEXTCLOUD_TRUSTED_DOMAINS
             - name: PHP_MEMORY_LIMIT
               value: 512M
             - name: PHP_UPLOAD_LIMIT

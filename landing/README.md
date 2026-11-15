@@ -4,7 +4,7 @@ This is a static MyEduDrive landing page. It can be previewed by itself or serve
 
 ## Preview
 
-Open `index.html` directly in a browser. Use the **عربي / English** control to switch languages and the sun/moon control to switch themes. The page follows your system theme on first visit, then remembers your selection. From a local file preview, the sign-in button asks for the Minikube address and opens its `/login` page. A typical address is `http://<MINIKUBE-IP>:30080/login`.
+Open `index.html` directly in a browser. Use the **Arabic / English** control to switch languages and the sun/moon control to switch themes. The page follows your system theme on first visit, then remembers your selection. From a local file preview, the sign-in button asks for the Minikube address and opens its `/login` page. A typical address is `http://<MINIKUBE-IP>:30080/login`.
 
 When this page is eventually served from the same origin as MyEduDrive, its sign-in links use `/login` directly.
 

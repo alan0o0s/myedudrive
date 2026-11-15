@@ -49,7 +49,7 @@ Set different randomly generated passwords in `secrets.env`, and keep the file o
 
 ## 2. Start Minikube and Deploy the Services
 
-Build and test the unified image locally, then publish it to Docker Hub using the [Docker Hub and Branding Guide](DOCKER_HUB_AND_BRANDING_AR.md). The current tag is `v1.1.2` in the `alan0o0s/myedudrive-server` repository. Make the repository public or configure an `imagePullSecret`.
+Build and test the unified image locally, then publish it to Docker Hub using the [Docker Hub and Branding Guide](DOCKER_HUB_AND_BRANDING_EN.md). The current tag is `v1.1.2` in the `alan0o0s/myedudrive-server` repository. Make the repository public or configure an `imagePullSecret`.
 
 ```bash
 minikube start
@@ -119,8 +119,9 @@ The HPA minimum is 2 replicas and the maximum is 10. Its CPU target is 70% of th
 - `images/nextcloud/`: Dockerfile for the unified image, Apache configuration, first-install hook, theme, and branding script.
 - `landing/`: Landing page and assets included in the application image.
 - `scripts/build-images.sh`: Builds one MyEduDrive image using the engine version compatible with the PVC data.
-- `DOCKER_HUB_AND_BRANDING_AR.md`: Existing guide for building, publishing, and applying branding.
-- `BRANDING_AUDIT_AR.md`: Existing audit of remaining brand names and technical identifiers.
+- `DOCKER_HUB_AND_BRANDING_EN.md`: Guide for building, publishing, and applying branding.
+- `BRANDING_AUDIT_EN.md`: Audit of remaining brand names and technical identifiers.
+- `FILES_EXPLAINED_AND_TESTS_EN.md`: Detailed explanations and individual checks for the Kubernetes resource files.
 - `scripts/deploy.sh`: Creates the Secret, deploys the account's images, and applies the official theme.
 - `scripts/verify.sh`: Non-destructive deployment checks.
 - `scripts/enable-scaling.sh`: Adds the HPA after the base deployment.

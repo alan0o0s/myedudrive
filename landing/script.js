@@ -1,6 +1,5 @@
 (() => {
   const root = document.documentElement;
-  const langButton = document.querySelector('.language-toggle');
   const themeButton = document.querySelector('.theme-toggle');
   const menuButton = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('#mobile-menu');
@@ -8,16 +7,11 @@
 
   const updateThemeLabel = () => {
     const isDark = root.dataset.theme === 'dark';
-    const lang = root.lang;
-    const label = isDark
-      ? (lang === 'ar' ? 'التبديل للوضع الفاتح' : 'Switch to light mode')
-      : (lang === 'ar' ? 'التبديل للوضع الداكن' : 'Switch to dark mode');
+    const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
     themeButton.setAttribute('aria-label', label);
     themeButton.title = label;
     themeButton.setAttribute('aria-pressed', String(isDark));
-    themeButton.querySelector('.theme-label').textContent = isDark
-      ? (lang === 'ar' ? 'الوضع الفاتح' : 'Light mode')
-      : (lang === 'ar' ? 'الوضع الداكن' : 'Dark mode');
+    themeButton.querySelector('.theme-label').textContent = isDark ? 'Light mode' : 'Dark mode';
     document.querySelector('meta[name="theme-color"]').content = isDark ? '#101827' : '#f7f9fc';
   };
 
@@ -39,24 +33,6 @@
   systemTheme.addEventListener?.('change', () => {
     if (themePreference === 'system') applyTheme('system');
   });
-
-  const setLanguage = (lang) => {
-    root.lang = lang;
-    root.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.querySelectorAll('[data-en][data-ar]').forEach((el) => {
-      el.innerHTML = el.dataset[lang];
-    });
-    langButton.textContent = lang === 'ar' ? 'English' : 'عربي';
-    langButton.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
-    updateThemeLabel();
-    document.title = lang === 'ar' ? 'MyEduDrive — تعلّمك في مكان واحد' : 'MyEduDrive — Your learning, in one place';
-    try { localStorage.setItem('myedudrive-language', lang); } catch (_) { /* local preview can restrict storage */ }
-  };
-
-  let language = 'en';
-  try { language = localStorage.getItem('myedudrive-language') || 'en'; } catch (_) { /* default to English */ }
-  setLanguage(language);
-  langButton.addEventListener('click', () => setLanguage(root.lang === 'en' ? 'ar' : 'en'));
 
   document.querySelectorAll('.login-link').forEach((link) => {
     link.addEventListener('click', (event) => {

@@ -3,7 +3,7 @@
 <img width="960" height="540" alt="traffic_flow_white" src="https://github.com/user-attachments/assets/2939006a-84ff-43f0-babc-38c8abcdd003" />
 
 
-سسسس
+
 # MyEduDrive — Server 1 Setup Guide
 
 This guide prepares **MyEduDrive on Server 1 only** using Minikube, MariaDB, and Redis. A single application image combines the landing page and the MyEduDrive server (based on Nextcloud) in **one container**. Apache serves the landing page at `/` and routes `/login`, WebDAV, and application endpoints to MyEduDrive. All Kubernetes resources are placed in the `myedudrive` namespace, and application data is stored in PVCs.

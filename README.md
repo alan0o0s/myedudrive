@@ -18,6 +18,12 @@
 
 # MyEduDrive — Server 1 Setup Guide
 
+## Explore MyEduDrive
+
+| Live application | System architecture |
+|:--|:--|
+| [![Open the live application](https://img.shields.io/badge/MyEduDrive-Live%20Application-1769E8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://myedudrive.cloud)<br>Visit the deployed site over HTTPS. | [![View the architecture board](https://img.shields.io/badge/Architecture-Explore%20on%20Miro-FFD02F?style=for-the-badge&logo=miro&logoColor=050038)](https://miro.com/app/board/uXjVEStwH18=/?share_link_id=720573106665)<br>Explore the project architecture on Miro. |
+
 This guide prepares **MyEduDrive on Server 1 only** using Minikube, MariaDB, and Redis. A single application image combines the landing page and the MyEduDrive server (based on Nextcloud) in **one container**. Apache serves the landing page at `/` and routes `/login`, WebDAV, and application endpoints to MyEduDrive. All Kubernetes resources are placed in the `myedudrive` namespace, and application data is stored in PVCs.
 
 ## Scope of This Stage
